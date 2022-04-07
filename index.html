@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="background">
+  <header>
+    <div class="desktop-view desktop-sub-nav">
+      <div class="lang">
+        <img src="flag_usa.png" id="lang-flag" />
+        <span>EN</span>
+      </div>
+      <ul id="menu-bar-list">
+        <li class="menu-blk">
+          <i class="fa fa-shield"></i>
+        </li>
+        <li class="menu-blk">
+          <i class="fa fa-question-circle"></i>
+        </li>
+        <li class="menu-blk">
+          <i class="fa fa-map-marker"></i>
+        </li>
+        <li class="menu-blk">
+          <i class="fa fa-user"></i>
+        </li>
+        <li id="desktop-cart">
+          <i class="fa fa-shopping-cart"></i>
+          <span class="desktop-cart-count">3</span>
+        </li>
+      </ul>
+    </div>
+
+
+    <div class="container menu collapsed">
+      <div class="mobile-menu mobile-view">
+        <a class="menu-btn" onclick="menuIconClicked()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+      <div class="logo">
+        <img src="logo.svg" />
+      </div>
+      <div class="desktop-view desktop-nav">
+        <ul>
+          <li id="menu-solutions">
+            <a onmouseenter="hover('solutions')" onmouseleave="hover('solutions')" onclick="menuItemClicked('menu-solutions')">SOLUTIONS</a>
+          </li>
+          <li id="menu-products">
+            <a onmouseenter="hover('products')" onmouseleave="hover('products')" onclick="menuItemClicked('menu-products')">PRODUCTS</a>
+          </li>
+          <li>
+            <a>AUTOMATION</a>
+          </li>
+          <li>
+            <a>EDUCATION</a>
+          </li>
+          <li>
+            <a>RESOURCES</a>
+          </li>
+        </ul>
+      </div>
+      <button class="desktop-view" id="search">
+        Search <span><i class="fa fa-search"></i></span>
+      </button>
+      <div class="mobile-view mobile-nav">
+        <ul id="icons">
+          <li>
+            <i class="fa fa-search"></i>
+          </li>
+          <li>
+            <i class="fa fa-user"></i>
+          </li>
+          <li id="cart">
+            <i class="fa fa-shopping-cart"></i>
+            <span id="cart-count">3</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sub-menu desktop-view">
+      <div class="sub-solutions sub-hidden">
+        <ul>
+          <li>
+            <a>Solutions By Industry</a>
+          </li>
+          <li>
+            <a>Solutions By Process</a>
+          </li>
+          <li>
+            <a>Software Solutions</a>
+          </li>
+          <li>
+            <a>Services</a>
+          </li>
+        </ul>
+      </div>
+      <div class="sub-products sub-hidden">
+        <ul>
+          <li>
+            <a>Equipment</a>
+          </li>
+          <li>
+            <a>Consumables</a>
+          </li>
+          <li>
+            <a>Safety</a>
+          </li>
+          <li>
+            <a>New Products</a>
+          </li>
+          <li>
+            <a>Promotions</a>
+          </li>
+          <li>
+            <a>Browse By Brand</a>
+          </li>
+          <li>
+            <a>Browse By Industry</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mobile-view hidden" id="main-nav-mobile">
+      <div id="mobile-menu-header">
+        <a>
+          <span>Menu</span><i class='fa fa-close' onClick="menuExit()"></i>
+        </a>
+      </div>
+      <div class="hidden" id="main-nav-level1-mobile">
+        <ul class="nav-col-mobile white-bg">
+          <li>
+            <a id="mobile-solutions-nav" onclick="menuSolutions()">
+              <span>SOLUTIONS</span><i class="fa fa-chevron-right"></i>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span>PRODUCTS</span><i class="fa fa-chevron-right"></i>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span>AUTOMATION</span><i class="fa fa-chevron-right"></i>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span>EDUCATION</span><i class="fa fa-chevron-right"></i>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span>RESOURCES</span><i class="fa fa-chevron-right"></i>
+            </a>
+          </li>
+        </ul>
+
+        <ul class="mobile-nav-icons">
+          <li>
+            <a>
+              <i class="fa fa-question-circle"></i><span>Help</span><i class="fa fa-chevron-right"></i>
+            </a>
+          </li>
+          <li>
+            <a>
+              <i class="fa fa-map-marker"></i><span>Where to Buy/Rent</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <i class="fa fa-shield"></i><span>Safety</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <img src="flag_usa.png" id="lang-flag" />
+              <span>EN</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="hidden" id="main-nav-solutions-level2-mobile">
+        <div id="menu-back">
+          <a onclick="menuBack()">
+            <i class="fa fa-chevron-left"></i><span>GO BACK</span>
+          </a>
+        </div>
+        <ul class="nav-col-mobile">
+          <li>
+            <a>
+              <span>SOLUTIONS BY INDUSTRY</span><i class="fa fa-chevron-right"></i>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span>SOLUTIONS BY PROCESS</span><i class="fa fa-chevron-right"></i>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span>SOFTWARE SOLUTIONS</span><i class="fa fa-chevron-right"></i>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span>SERVICES</span><i class="fa fa-chevron-right"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+   
+  </header>
+  </div>
+
+
+
+
+
+
+
+  <script>
+    let sub_solution = document.getElementsByClassName("sub-solutions")[0];
+    let sub_products = document.getElementsByClassName("sub-products")[0];
+    let solution_nav = document.getElementById("menu-solutions");
+    let products_nav = document.getElementById("menu-products");
+    let menu = document.getElementsByClassName("menu")[0];
+    let mainNavMobile = document.getElementById("main-nav-mobile");
+    let mainNavLv1 = document.getElementById("main-nav-level1-mobile");
+    let mainNavSols = document.getElementById("main-nav-solutions-level2-mobile");
+
+    function menuItemClicked(id) {
+      products_nav.classList.remove('nav-hover');
+      solution_nav.classList.remove('nav-hover');
+
+      if (id === "menu-solutions") {
+        solution_nav.classList.add('nav-hover');
+        sub_solution.classList.toggle("sub-hidden");
+        solution_nav.classList.toggle("nav-selected");
+        if (!sub_products.classList.contains("sub-hidden")) {
+          sub_products.classList.toggle("sub-hidden");
+          products_nav.classList.toggle("nav-selected");
+        }
+      } else if (id === "menu-products") {
+        products_nav.classList.add('nav-hover');
+        sub_products.classList.toggle("sub-hidden");
+        products_nav.classList.toggle("nav-selected");
+        if (!sub_solution.classList.contains("sub-hidden")) {
+          sub_solution.classList.toggle("sub-hidden");
+          solution_nav.classList.toggle("nav-selected");
+        }
+      }
+
+      if(sub_solution.classList.contains("sub-hidden") && sub_products.classList.contains("sub-hidden")){
+        document.getElementsByClassName("container")[0].classList.add("collapsed");
+        document.getElementsByClassName("background")[0].classList.remove("gray-bg")  
+      }else{
+        document.getElementsByClassName("container")[0].classList.remove("collapsed");
+        document.getElementsByClassName("background")[0].classList.add("gray-bg")
+      }
+    }
+
+    function menuIconClicked() {
+      menu.classList.toggle("hidden");
+      mainNavMobile.classList.toggle("hidden");
+      mainNavLv1.classList.toggle("hidden");
+    }
+
+    function menuExit() {
+      menu.classList.toggle("hidden");
+      mainNavMobile.classList.toggle("hidden");
+      mainNavLv1.classList.toggle("hidden");
+    }
+
+    function menuBack() {
+      mainNavSols.classList.toggle("hidden");
+      mainNavLv1.classList.toggle("hidden");
+    }
+
+    function menuSolutions() {
+      mainNavSols.classList.toggle("hidden");
+      mainNavLv1.classList.toggle("hidden");
+    }
+
+    function hover(menuItem){
+      if(sub_products.classList.contains("sub-hidden") 
+        && sub_solution.classList.contains("sub-hidden")){
+        if('solutions' === menuItem)
+          solution_nav.classList.toggle("nav-hover");
+        else if ('products' === menuItem)
+         products_nav.classList.toggle("nav-hover");
+      }
+    }
+
+  </script>
+</body>
+
+</html>
