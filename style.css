@@ -139,7 +139,7 @@ span {
   cursor: pointer;
 }
 
-@media (min-width: 800px) {
+@media all and (min-width: 800px) {
   body {
     background-color: black;
     margin: auto;
